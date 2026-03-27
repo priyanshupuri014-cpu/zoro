@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PVP Perfume</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #02140c, #0f3d2a);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* INTRO */
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #02140c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+/* FALL + BOUNCE + GLOW */
+#bottle {
+    width: 200px;
+    animation: fall 2s ease forwards, glow 2s infinite alternate;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-400px) rotate(-25deg); opacity: 0; }
+    70% { transform: translateY(30px) rotate(10deg); }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px gold); }
+    to { filter: drop-shadow(0 0 25px lime); }
+}
+
+/* BRAND TEXT */
+#brand {
+    margin-top: 20px;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    opacity: 0;
+    animation: fadeIn 2s 2s forwards, pulse 2s infinite 3s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* PRODUCT */
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    flex-wrap: wrap;
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(80px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.product img {
+    width: 320px;
+    border-radius: 15px;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.4s;
+}
+
+.product img:hover {
+    transform: scale(1.15) rotate(3deg);
+}
+
+/* FLOATING EFFECT */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.details {
+    margin-left: 30px;
+    max-width: 400px;
+}
+
+/* BUTTON ANIMATION */
+button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, gold, orange);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
+}
+
+/* CONTACT */
+.contact {
+    background: #052015;
+    padding: 30px;
+    text-align: center;
+    animation: fadeUp 1.5s ease;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* BACKGROUND SHIMMER */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px, -200px); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+    <img id="bottle" src="perfume.png" alt="Perfume Bottle">
+    <div id="brand">PVP PERFUME</div>
+</div>
+
+<header>PVP Perfume</header>
+
+<section class="product">
+    <img src="perfume.png" alt="Zoro Perfume">
+    <div class="details">
+        <h2>Zoro Inspired Perfume</h2>
+        <p>Inspired by anime swordsman energy. Bold, fresh, and powerful fragrance.</p>
+        <h3>₹6969</h3>
+        <button>Buy Now</button>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Address: 45, Bajaj Nagar, Nagpur, Maharashtra</p>
+    <p>📞 Phone: 987686464</p>
+    <p>📧 Email: priyanshupuri2009@tgmail.com</p>
+</section>
+
+<footer>
+    © 2026 PVP Perfume | Made by PVP
+</footer>
+
+<script>
+setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+}, 4000);
+</script>
+
+</body>
+</html>
